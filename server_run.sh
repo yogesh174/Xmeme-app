@@ -7,4 +7,5 @@ USE memes;
 CREATE TABLE data (id int NOT NULL AUTO_INCREMENT, name varchar(255), url varchar(255), caption varchar(255), PRIMARY KEY (id));
 EOF
 
+cd backend
 python3 app.py
