@@ -1,4 +1,4 @@
-mysql_host: 'database-1.ckfcn6yxidoq.us-east-1.rds.amazonaws.com'
-mysql_user: 'yogesh'
-mysql_password: 'passwd123'
+mysql_host: 'localhost'
+mysql_user: 'root'
+mysql_password: 'passwd'
 mysql_db: 'memes'
