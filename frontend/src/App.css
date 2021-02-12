@@ -1,0 +1,37 @@
+.content {
+  display: flex;
+}
+
+.logo {
+  padding-left: 10%;
+}
+
+#logo {
+  font-family: Montserrat;
+  font-size: bold;
+  font-size: medium;
+}
+
+#heading {
+  color: #48147B;
+  font-family: "Poppins";
+  font-size: 25px;
+  padding-bottom: 25px;
+}
+
+.form {
+  padding: 10px;
+  padding-left: 10%;
+}
+
+.left-container {
+  background-color: #4E8DB060;
+  height: 100vh;
+  flex-grow: 2;
+  margin: auto;
+}
+
+.memes {
+  background-color: #4E8DB0;
+  flex-grow: 8
+}

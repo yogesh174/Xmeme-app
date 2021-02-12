@@ -22,7 +22,7 @@ mysql = MySQL(app)
 
 api = Api(app)
 
-def input_handler(input_json):
+def insert_data(input_json):
     name = input_json["name"]
     url = input_json["url"]
     caption =  input_json["caption"]
@@ -34,11 +34,11 @@ def input_handler(input_json):
     return {"id": id[0][0]}
     
 
-class Meme(Resource):
+class Memes(Resource):
     def post(self):
         input_json = request.get_json(force=True)
-        output_json = input_handler(input_json)
-        return output_json 
+        inserted_id = insert_data(input_json)
+        return inserted_id 
 
     def get(self):
         cur = mysql.connection.cursor()
@@ -52,11 +52,9 @@ class Meme(Resource):
             meme_dict['url'] = meme[2]
             meme_dict['caption'] = meme[3]
             memes_list.append(meme_dict)
-        # print(res)
-        # print(res[-1][0])
         return memes_list
 
-class Meme1(Resource):
+class MemeId(Resource):
     def get(self, meme_id):
         cur = mysql.connection.cursor()
         cur.execute('''SELECT * FROM data WHERE id = {}'''.format(meme_id))
@@ -71,9 +69,9 @@ class Meme1(Resource):
         else:
             abort(404, message="Page not found")
 
-api.add_resource(Meme, '/memes')
+api.add_resource(Memes, '/memes')
 
-api.add_resource(Meme1, '/memes/<int:meme_id>')
+api.add_resource(MemeId, '/memes/<int:meme_id>')
 
 if __name__ == '__main__':
-    app.run(threaded=True, host="0.0.0.0", port=8081)
+    app.run(threaded=True)
