@@ -22,7 +22,9 @@ const Form = () => {
     setValues({ ...values, [prop]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
     const data = JSON.stringify({
       name: values.name,
       url: values.url,
@@ -34,10 +36,12 @@ const Form = () => {
       body: data,
     };
 
-    fetch("https://xmeme174.herokuapp.com/memes", requestOptions)
+    await fetch("https://xmeme174.herokuapp.com/memes", requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+
+    window.location.reload(true);
   };
 
   return (
