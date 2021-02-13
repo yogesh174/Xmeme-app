@@ -30,25 +30,25 @@ Basic functionality is up and running
 
 # Backend
 
-1. The backend is capable of receiving the posted meme inputs from the frontend and store them in a database.
+1. The backend is capable of receiving the posted meme inputs from the frontend and store them in a database.  
    
-2. The backend is capable of fetching the list of memes from the database and send them to the frontend.
+2. The backend is capable of fetching the list of memes from the database and send them to the frontend.  
 
 3. Endpoint to send a meme to the backend
    - Endpoint - /memes
    - HTTP Method - POST
    - Json Body should contain the inputs - name, url, caption
-   - The backend allocates a unique id for the meme and returns it as a json response
+   - The backend allocates a unique id for the meme and returns it as a json response  
 
 4. Endpoint to fetch the latest 100 memes from the backend
    - Endpoint - /memes
    - HTTP Method - GET
-   - Error: If there are no memes available, an empty array is returned
+   - Error: If there are no memes available, an empty array is returned  
 
 5. Endpoint to fetch a single Meme based on id
     - Endpoint - /memes/\<id\>
     - HTTP Method - GET
-    - Error: If a meme with that id doesn’t exist, a 404 HTTP response code is returned
+    - Error: If a meme with that id doesn’t exist, a 404 HTTP response code is returned  
 
 
 # Project Screen Shot
@@ -57,9 +57,9 @@ Basic functionality is up and running
 
 # Built With
 
-**React** - The frontend framework used
-**Flask** - The backend mini-framework used
-**MySQL** - The database used
+**React** - The frontend framework used  
+**Flask** - The backend mini-framework used  
+**MySQL** - The database used  
 
 # Installation and Setup Instructions
 
@@ -83,5 +83,5 @@ This was a 1 week long project built during my second module at Crio WOD program
 
 # Contact
 
-Surapaneni Yogesh - surapaneniyogesh11@gmail.com
+Surapaneni Yogesh - surapaneniyogesh11@gmail.com  
 Connect with me on [LinkedIN](https://www.linkedin.com/in/surapaneni-yogesh-ba7303189/)
